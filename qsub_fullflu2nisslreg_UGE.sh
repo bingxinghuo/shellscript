@@ -48,7 +48,7 @@ fluTF3f+=registration/M$ANIMALID/fluoro/fluoro_transforms/M$ANIMALID"_fluoro_XFo
 annoimg=$TFDIR
 annoimg+=registration/M$ANIMALID/M$ANIMALID"_annotation.img"
 #python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdu.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00092 $SGE_TASK_ID $SGE_TASK_ID $SAVEDIR
-python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdu.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .0014 $SGE_TASK_ID $SGE_TASK_ID $SAVEDIR # 920, 921
+python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdu.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .0014 $SGE_TASK_ID $SGE_TASK_ID $SAVEDIR # 920, 921, 821
 fi
 fi
 date
