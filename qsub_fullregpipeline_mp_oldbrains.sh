@@ -12,7 +12,7 @@ source /sonas-hs/it/hpc/home/easybuild/lmod-setup.sh
 module load foss/2016a
 module load IntelPython/2.7.12
 
-ANIMALID=820 # input
+ANIMALID=852 # input
 TFDIR=/sonas-hs/mitra/hpc/home/blee/data/
 
 #

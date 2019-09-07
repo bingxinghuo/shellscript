@@ -9,5 +9,26 @@
 # run commands and application
 pwd
 date
-matlab -nodesktop -r jp2tifdown_bnb
+brainids=$1
+downrate=$2
+sourcedir=$3
+modal=$4
+if [ "${brainids:(-3)}" = "txt" ]; then
+    while read F; do
+    if [ "${modal,,}" = "mba" ]; then
+        inputdir=$sourcedir/"${F,,}"/"${F,,}"F/JP2/
+    fi
+    outputdir=~/"${F^^}"
+    mkdir $outputdir
+    matlab -nodesktop -r "jp2tifdown(${downrate},${inputdir},${outputdir})"
+    done < $brainids
+else
+    if [ "${modal,,}" = "mba" ]; then
+        inputdir=$sourcedir/"${brainids,,}"/"${brainids,,}"F/JP2/
+    fi
+    outputdir=~/"${brainids^^}"
+    mkdir $outputdir
+    matlab -nodesktop -r "jp2tifdown(${downrate},${inputdir},${outputdir})"
+fi
+
 date

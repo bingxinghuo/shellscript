@@ -8,7 +8,7 @@
 #$ -l m_mem_free=60G
 #$ -pe threads 10
 #$ -V
-ANIMALID=1231 # input
+ANIMALID=921 # input
 
 #
 SEEDDIR=/nfs/mitraweb2/mnt/disk125/main/marmosetRIKEN/NZ/
@@ -32,5 +32,6 @@ date
 source /sonas-hs/it/hpc/home/easybuild/lmod-setup.sh
 module load foss/2016a
 module load IntelPython/2.7.12
-python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00092 ~/M$ANIMALID/fluoreg/
+#python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00092 ~/M$ANIMALID/fluoreg/
+python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .0014 ~/M$ANIMALID/fluoreg/  # 920, 921, 821
 date

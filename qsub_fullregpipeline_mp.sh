@@ -12,7 +12,7 @@ source /sonas-hs/it/hpc/home/easybuild/lmod-setup.sh
 module load foss/2016a
 module load IntelPython/2.7.12
 
-ANIMALID=921 # input
+ANIMALID=917 # input
 TFDIR=/sonas-hs/mitra/hpc/home/blee/data/
 
 #
@@ -24,8 +24,9 @@ annoimg+=registration/M$ANIMALID/M$ANIMALID"_annotation.img"
 SEEDDIR+="m"$ANIMALID"/m"$ANIMALID"N/JP2/"
 NisslTF1=$TFDIR
 NisslTF1+=stackalign/M$ANIMALID"N"/M$ANIMALID"_N_XForm_matrix.txt"
-NisslTF2=$TFDIR
-NisslTF2+=stackalign/M$ANIMALID"N"/M$ANIMALID"_N_XForm_crop_matrix.txt"
+#NisslTF2=$TFDIR
+#NisslTF2+=stackalign/M$ANIMALID"N"/M$ANIMALID"_N_XForm_crop_matrix.txt"
+NisslTF2=/sonas-hs/mitra/hpc/home/bhuo/M$ANIMALID/M$ANIMALID"_N_XForm_crop_matrix.txt" # M917
 NisslTF3=$TFDIR
 NisslTF3+=registration/M$ANIMALID/transforms/M$ANIMALID"_XForm_matrix.txt"
 #mkdir -p /sonas-hs/mitra/hpc/home/bhuo/M$ANIMALID/M$ANIMALID"N/JP2-REG/"
