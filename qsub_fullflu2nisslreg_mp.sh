@@ -5,17 +5,19 @@
 #$ -cwd
 #$ -j y
 #$ -S /bin/bash
-#$ -l m_mem_free=60G
-#$ -pe threads 10
+#$ -l m_mem_free=40G
+#$ -pe threads 1
 #$ -V
-ANIMALID=921 # input
+ANIMALID=819 # input
 
 #
 SEEDDIR=/nfs/mitraweb2/mnt/disk125/main/marmosetRIKEN/NZ/
 SEEDDIR+="m"$ANIMALID"/m"$ANIMALID"F/JP2/"
-SAVEDIR=/sonas-hs/mitra/hpc/home/bhuo/M$ANIMALID/M$ANIMALID"F/JP2-REG/"
+SEEDDIR+="cellmasks/"
+SAVEDIR=/sonas-hs/mitra/hpc/home/bhuo/M$ANIMALID/M$ANIMALID"F/JP2-REG/cellmasks/"
 if [ ! -e $SAVEDIR ]; then mkdir -p $SAVEDIR ; fi
-TFDIR=/sonas-hs/mitra/hpc/home/blee/data/
+#TFDIR=/sonas-hs/mitra/hpc/home/blee/data/
+TFDIR=~/scripts/Registration_marmoset/Marmoset_Pipeline_2019/data/
 fluTF1m=$TFDIR
 fluTF1m+=stackalign/M$ANIMALID"F_maskimg"/M$ANIMALID"_F_XForm_matrix.txt"
 fluTF1f=$TFDIR
@@ -35,7 +37,8 @@ source /sonas-hs/it/hpc/home/easybuild/lmod-setup.sh
 module load foss/2016a
 module load IntelPython/2.7.12
 
-#python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00092 $SAVEDIR
-python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .0014 $SAVEDIR # 920, 921, 821
+#python ~/scripts/Registration_marmoset/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00092 $SAVEDIR
+python ~/scripts/Registration_marmoset/flu2nissl/applySTSCompositeTransform_fullfluotif_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00092 $SAVEDIR
+#python ~/scripts/Registration/flu2nissl/applySTSCompositeTransform_fullfluo_kdump.py M$ANIMALID $SEEDDIR $fluTF1m $fluTF1f $fluTF2 $fluTF3m $fluTF3f $annoimg .00138 $SAVEDIR # 920, 921, 821
 
 date
