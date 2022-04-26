@@ -25,6 +25,6 @@ for entry in $(ls $INPUTDIR/*jp2 -v); do
 #  echo "Original: "$real_file".jp2"
 #  echo "Converted: "$real_file".tif"
 
-kdu_expand -i $INPUTDIR/$real_file".jp2" -o $OUPUTDIR/$real_file".tif" -reduce $dsrate
+kdu_expand -i $INPUTDIR/$real_file".jp2" -o $OUTPUTDIR/$real_file".tif" -reduce $dsrate
 #  echo "FINISH..........."
 done
